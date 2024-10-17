@@ -12,15 +12,17 @@ const options = {
 
 export const fetchMovies = createAsyncThunk(
   "movies/fetchMoviesStatus",
-  async () => {
+  async (page = 1) => {
     const response = await fetch(
-      "https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=false&language=en-US&page=1&sort_by=popularity.desc",
+      `https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc`,
       options
     );
     if (!response.ok) {
       throw new Error("Failed to fetch movies");
     }
     const data = await response.json();
+
+    return { data, page };
   }
 );
 
@@ -29,6 +31,8 @@ const initialState = {
   // overksam, i vänteläge
   loading: "idle",
   error: null,
+  currentPage: 1, // Track the current page
+  totalPages: 0, // Store total pages from the API response
 };
 
 const moviesSlice = createSlice({
@@ -43,7 +47,9 @@ const moviesSlice = createSlice({
       .addCase(fetchMovies.fulfilled, (state, action) => {
         state.loading = "succeeded";
         // Assign the 'results' array to 'entities'
-        state.entities = action.payload.results;
+        state.entities = action.payload.data.results;
+        state.currentPage = action.payload.page; // Update the current page
+        state.totalPages = action.payload.data.total_pages; // Total pages from API response
       })
       .addCase(fetchMovies.rejected, (state, action) => {
         state.loading = "rejected";
