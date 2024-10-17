@@ -8,6 +8,9 @@ export default function Header() {
           <li>
             <Link to="/">Home</Link>
           </li>
+          <li>
+            <Link to="/favorites">Favorites</Link>
+          </li>
         </ul>
       </nav>
     </div>
