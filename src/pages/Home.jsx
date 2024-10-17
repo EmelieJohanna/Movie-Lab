@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovies } from "../redux/features/fetchMovies";
 import MovieList from "../components/MovieList";
+import MetaTags from "../components/MetaTags";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -29,6 +30,11 @@ export default function Home() {
 
   return (
     <div>
+      <MetaTags
+        title="Home"
+        description="Discover popular movies on Movie Lab."
+        url="https://movie-lab-ruddy.vercel.app/"
+      />
       <h1>Welcome to Movie Lab</h1>
       <MovieList />
       <div>

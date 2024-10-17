@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovieDetails } from "../redux/features/movieDetailsSlice";
+import MetaTags from "../components/MetaTags";
 
 export default function MovieDetails() {
   const { id } = useParams(); // Get movie ID from route parameters
@@ -19,6 +20,11 @@ export default function MovieDetails() {
 
   return (
     <div>
+      <MetaTags
+        title={movie.title}
+        description={movie.overview}
+        image={movie.poster_path}
+      />
       <h1>{movie.title}</h1>
       <img src={`${imageBaseUrl}${movie.poster_path}`} alt={movie.title} />
       <p>Release Date: {movie.release_date.slice(0, 4)}</p>

@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchSearchResults } from "../redux/features/searchSlice";
 import MovieCard from "../components/MovieCard";
 import { useLocation } from "react-router-dom";
+import MetaTags from "../components/MetaTags";
+import DOMPurify from "dompurify";
 
 const SearchResults = () => {
   const dispatch = useDispatch();
@@ -32,8 +34,15 @@ const SearchResults = () => {
     }
   };
 
+  // Sanitize query
+  const sanitizedQuery = DOMPurify.sanitize(query);
+
   return (
     <div>
+      <MetaTags
+        title={`Search Results for "${sanitizedQuery}" | Movie Lab`}
+        description={`Explore movies related to "${sanitizedQuery}" on Movie Lab.`}
+      />
       <h1>Search Results for "{query}"</h1>
       {loading === "pending" && <p>Loading...</p>}
       {loading === "succeeded" && results.length > 0 && (
