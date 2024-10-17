@@ -1,0 +1,52 @@
+/* SearchBar container */
+.search-bar-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Search input and form */
+.search-form {
+  display: flex;
+  width: 100%;
+}
+
+.search-form input {
+  flex-grow: 1;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.search-form button {
+  padding: 8px 16px;
+  font-size: 16px;
+}
+
+/* Overlayed suggestions dropdown */
+.suggestions-overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.suggestions-overlay > div {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestions-overlay > div:hover {
+  background-color: #f0f0f0;
+}
+
+.suggestions-overlay img {
+  width: 50px;
+  height: 75px;
+  object-fit: cover;
+  margin-right: 12px;
+}

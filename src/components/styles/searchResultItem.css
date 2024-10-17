@@ -1,0 +1,4 @@
+.search-result-item {
+  display: flex;
+  flex-direction: row;
+}

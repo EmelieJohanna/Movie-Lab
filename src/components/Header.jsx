@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 export default function Header() {
   return (
@@ -8,6 +9,7 @@ export default function Header() {
           <li>
             <Link to="/">Home</Link>
           </li>
+          <SearchBar />
           <li>
             <Link to="/favorites">Favorites</Link>
           </li>
