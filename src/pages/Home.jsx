@@ -29,7 +29,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className="home-container">
       <MetaTags
         title="Home"
         description="Discover popular movies on Movie Lab."
@@ -37,7 +37,7 @@ export default function Home() {
       />
       <h1>Welcome to Movie Lab</h1>
       <MovieList />
-      <div>
+      <div className="pagination">
         <button onClick={handlePrevPage} disabled={currentPage === 1}>
           Previous
         </button>

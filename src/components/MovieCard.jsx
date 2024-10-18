@@ -35,8 +35,8 @@ const MovieCard = ({ movie }) => {
           alt={`Movie Cover for ${movie.title}`}
         />
         <h3>{movie.title}</h3>
-        <p>Release Date: {movie.release_date}</p>
-        <p>Rating: {movie.vote_average}</p>
+        <p>Release Date: {movie.release_date.slice(0, 4)}</p>
+        <p>Rating: {movie.vote_average.toString().slice(0, 3)}</p>
       </Link>
       <button onClick={handleFavoriteClick}>
         {isFavorite ? "Remove from Favorites" : "Add to Favorites"}

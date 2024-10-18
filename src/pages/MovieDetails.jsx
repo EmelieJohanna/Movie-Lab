@@ -42,20 +42,35 @@ export default function MovieDetails() {
   };
 
   return (
-    <div>
+    <div className="movie-details-container">
       <MetaTags
         title={movie.title}
         description={movie.overview}
-        image={movie.poster_path}
+        image={`${imageBaseUrl}${movie.poster_path}`}
+        url={`https://movie-lab-ruddy.vercel.app/movie/${id}`}
       />
-      <h1>{movie.title}</h1>{" "}
-      <img src={`${imageBaseUrl}${movie.poster_path}`} alt={movie.title} />
-      <p>Release Date: {movie.release_date.slice(0, 4)}</p>
-      <p>Overview: {movie.overview}</p>
-      <p>Rating: {movie.vote_average.toString().slice(0, 3)}</p>
-      <button onClick={handleFavorite}>
-        {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
-      </button>
+      <div className="movie-details">
+        <img
+          src={`${imageBaseUrl}${movie.poster_path}`}
+          alt={movie.title}
+          className="movie-poster"
+        />
+        <div className="movie-info">
+          <h1>{movie.title}</h1>
+          <p>
+            <strong>Release Year:</strong> {movie.release_date.slice(0, 4)}
+          </p>
+          <p>
+            <strong>Rating:</strong> {movie.vote_average.toFixed(1)}
+          </p>
+          <p>
+            <strong>Overview:</strong> {movie.overview}
+          </p>
+          <button onClick={handleFavorite}>
+            {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

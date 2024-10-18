@@ -1,0 +1,289 @@
+/* Apply dark background and light text */
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style links */
+a {
+  color: #bb86fc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Movie Card Styling */
+.movie-card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 16px;
+  transition: background-color 0.3s;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.movie-card h3 {
+  margin-top: 12px;
+  font-size: 1.2em;
+}
+
+.movie-card p {
+  margin: 8px 0;
+}
+
+.movie-card button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.movie-card button:hover {
+  background-color: #555;
+}
+
+/* Layout Styling */
+.layout {
+  padding: 20px;
+}
+
+/* Header Styling */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f1f1f;
+  border-bottom: 1px solid #333;
+}
+
+/* Button Styling */
+button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+/* Form Styling */
+.search-form {
+  display: flex;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #333;
+  border-radius: 4px 0 0 4px;
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+.search-form button {
+  padding: 8px 12px;
+  border-radius: 0 4px 4px 0;
+  background-color: #bb86fc;
+  color: #000;
+}
+
+.search-form button:hover {
+  background-color: #9f67e4;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f1f1f;
+  padding: 15px 4px;
+  border-bottom: 1px solid #333;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.header a {
+  margin: 0 10px;
+  color: #bb86fc;
+  font-weight: bold;
+}
+
+.header a:hover {
+  color: #ffffff;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar-container {
+  flex: 1;
+}
+
+.search-result-item {
+  color: #121212;
+}
+
+/* Movie Detail Page */
+.movie-details-container {
+  padding: 20px;
+}
+
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie-poster {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.movie-info {
+  max-width: 600px;
+  text-align: center;
+}
+
+.movie-info h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.movie-info p {
+  margin: 8px 0;
+}
+
+.movie-info button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #bb86fc;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.movie-info button:hover {
+  background-color: #9f67e4;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .movie-details {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .movie-poster {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+
+  .movie-info {
+    text-align: left;
+  }
+}
+
+/* Home Container */
+.home-container {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Movie List Grid */
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 10px 0;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  background-color: #bb86fc;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #9f67e4;
+}
+
+.pagination span {
+  font-size: 1em;
+  color: #ffffff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .movie-list {
+    gap: 15px;
+  }
+
+  .pagination button {
+    padding: 8px 16px;
+  }
+
+  .pagination span {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pagination button {
+    width: 100%;
+  }
+
+  .pagination span {
+    font-size: 0.8em;
+  }
+}
