@@ -14,7 +14,7 @@ export const fetchMovies = createAsyncThunk(
   "movies/fetchMoviesStatus",
   async (page = 1) => {
     const response = await fetch(
-      `https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc`,
+      `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc`,
       options
     );
     if (!response.ok) {
