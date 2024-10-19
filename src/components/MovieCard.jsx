@@ -19,10 +19,8 @@ const MovieCard = ({ movie }) => {
     TagManager.dataLayer({
       dataLayer: {
         event: "add_to_favorites",
-        movie: {
-          id: movie.id,
-          title: movie.title,
-        },
+        id: movie.id,
+        title: movie.title,
       },
     });
   };
