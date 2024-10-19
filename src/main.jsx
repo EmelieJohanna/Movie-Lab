@@ -11,7 +11,7 @@ import "./index.css";
 const GA_MEASUREMENT_ID = "G-GV9B2BV4X0";
 
 const tagManagerArgs = {
-  gtmId: "GTM-WXCJLL7G",
+  gtmId: "GTM-PWKWZ892",
 };
 ReactGA.initialize(GA_MEASUREMENT_ID);
 TagManager.initialize(tagManagerArgs);
