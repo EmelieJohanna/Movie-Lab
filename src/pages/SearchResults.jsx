@@ -52,7 +52,7 @@ const SearchResults = () => {
               <MovieCard key={movie.id} movie={movie} />
             ))}
           </div>
-          <div>
+          <div className="pagination">
             <button onClick={handlePrevPage} disabled={currentPage === 1}>
               Previous
             </button>

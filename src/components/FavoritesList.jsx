@@ -5,7 +5,7 @@ export default function FavoritesList() {
   const favorites = useSelector((state) => state.favorites.items); // Get favorite movies from Redux
 
   return (
-    <div className="favorites-list">
+    <div className="movie-list">
       {favorites.length > 0 ? (
         favorites.map((movie) => <MovieCard key={movie.id} movie={movie} />)
       ) : (
