@@ -120,8 +120,8 @@ GTM=GTM-XXXXXX
 
 Create a .env file in the root directory with the following:
 
-  ```env
-  VITE_TMDB_API_KEY=your_tmdb_api_key
+   ```env
+   VITE_TMDB_API_KEY=your_tmdb_api_key
 
 
 # React + Vite
